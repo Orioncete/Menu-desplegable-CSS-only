@@ -1,0 +1,76 @@
+/*Comenzamos por dar formato a las listas, elimiando viñetas y definiendo fondo, color, etc*/
+#lista1 {
+    width: 200px;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+/*A continuacion daremos formato a los diferentes submenus, identificandolos por su posicion como hijos de la lista o si queremos, tambien podriamos hacerlos por su clase (submenu)*/
+#lista1 li { 
+    display: -webkit-flex; -webkit-flex-direction: row;
+    display: -moz-flex; -moz-flex-direction: row;
+    display: -ms-flex; -ms-flex-direction: row;
+    display: -o-flex; -o-flex-direction: row;
+    display: flex; flex-direction: row;
+    /*Como se puede ver, "flex" es un nuevo elemeto de CSS3, y no todos los navegadores lo soportan nativamente, por ello hemos repetido la instruccion varias veces con llamadas a diferentes frameworks*/
+    float: left;
+    list-style: none;
+    margin:0px;
+    padding; 0px;
+}
+.submenu li{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+/*Proseguimos con los vinculos contenidos en esos elementos, que es donde trabajaremos a partir de ahora, definiendo su aspecto*/
+#lista1 li a, .submenu li a {
+    display: block;
+    width: 200px;
+    text-decoration: none;/*eliminamos es subrayado tipico de los vinculos en HTML*/
+    text-align: center;
+    color: darkcyan;
+    font-family: "Comic Sans", sans-serif;
+    font-size: 21px;font-size: 21px;
+    background-color: darksalmon;
+    background-image: -webkit-linear-gradient(left top, darksalmon, pink);
+    background-image: -o-linear-gradient(bottom right, darksalmon, pink);
+    background-image: -moz-linear-gradient(bottom right, darksalmon, pink);
+    background-image: linear-gradient(to bottom right, darksalmon, pink);
+}
+/*Tambien definiremos un estilo diferente para cuando el raton  pase sobre ellos*/
+#lista1 li a:hover, .submenu li a:hover {
+    color: lightskyblue;
+    background-color: red;
+    background-image: -webkit-linear-gradient(left top, darkred, orange);
+    background-image: -o-linear-gradient(bottom right, darkred, orange);
+    background-image: -moz-linear-gradient(bottom right, darkred, orange);
+    background-image: linear-gradient(to bottom right, darkred, orange);
+    font-size: 21px;
+    background-size: contain;
+    text-shadow: #cbe7f8 -1px 1px 0px;
+}
+.submenu {
+    display: none;/*Esta instruccion hara desaparecer los submenus, los haramos aparecer solo al mover el raton sobre la opcion correcpondiente del menu principal*/
+    float: left;
+    width: 600px;
+    margin: 0px;
+    padding: 0px;
+}
+/*Ahora definiremos una regla para que aparezca el submenu correspondiente al pasar el raton sobre la opcion indicada en el menu principal*/
+#lista1 li:hover .submenu {
+    display: block;
+}
+/*Finalmente definimos otra regla para cambiar el aspecto cuando se Clickea sobre los enlaces*/
+#lista1 li a:active {
+    /*Usaremos una nueva propiedad de CSS3 llamada transform, que permite "jugar" con los elementos del documento de manera visual.
+    Como sucede con los gradientes, no todos los navegadores la soportan aun, asi que habrá que definirla de 4 maneras, y aun así es posible que en algunos navegadores no produzca efecto alguno*/
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);  
+    box-shadow: yellow 0px 0px 15px;
+    color: yellow;
+    text-shadow: none;
+}

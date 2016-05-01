@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Pequeño ejemplo de menu desplegable en HTML5 y CSS3</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Intento amateur de menu desplegable en HTML5 y CSS3 con comentarios">
+        <meta name="keywords" content="HTML5 menu desplegable CSS3 animación amateur ejemplo">
+        <meta name="generator" content="Brackets Emmet Google Chrome Mozilla Firefox">
+        <meta name="author" content="Pedro Pablo Gonzalo García">
+        <script src="JS/script.js" type="text/javascript" ></script>
+        <link href="CSS/estilo.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+       <!-- Mediante la siguiente abreviatura de Emmet creamos una lista desordenada de 5 elementos contenida en un NAV, definiendo el contenido de los elementos y asignando clase e id donde corresponda:
+       
+       "nav.menu#menu_sup>ul#lista1>li#elem1{Portada}+li#elem2{Artículos}+li#elem3{Comentarios}+li#elem4{Staff}+li#elem5{Contacto}"
+       
+       Posteriormente podremos (y deberemos, ya que es un menu) añadir vinculos/enlaces a los elementos de la lista con "href", esto lo lograremos gracias a una pequeña modificación de la abreviatura de Emmet anterior, quedando asi:
+       
+       "nav.menu#menu_sup>ul#lista1>(li#elem1>a{Portada})+(li#elem2>a{Artículos})+(li#elem3>a{Comentarios})+(li#elem4>a{Staff})+(li#elem5>a{Contacto})"
+       
+       Las direcciones de los vinculos o enlaces habra que introducirlas a mano (..cachis!!) 
+       
+       Dado que vamos a crear un menu desplegable, con mas elementos dentro de los propios elementos de la lista principal, será necesario crear nuevas listas desordenadas dentro de dichos elementos, para ello usaremos las abreviaturas que dejo como comentario en cada elemento-->
+       <nav class="menu" id="menu_sup">
+           <ul id="lista1">
+               <li id="elem1"><a href="#">Portada</a>
+               <!--ul.submenu#lista11>(li#elem11>a{Novedades})+(li#elem12>a{Colecciones})+(li#elem13>a{Diseñadores})-->
+                   <ul class="submenu" id="lista11">
+                       <li id="elem11"><a href="#">Novedades</a></li>
+                       <li id="elem12"><a href="#">Colecciones</a></li>
+                       <li id="elem13"><a href="#">Diseñadores</a></li>
+                   </ul>
+               </li>
+               <li id="elem2"><a href="#">Artículos</a>
+               <!--ul.submenu#lista12>(li#elem21>a{Moda hombre})+(li#elem22>a{Moda mujer})+(li#elem23>a{Moda niño})-->
+                   <ul class="submenu" id="lista12">
+                       <li id="elem21"><a href="#">Moda hombre</a></li>
+                       <li id="elem22"><a href="#">Moda mujer</a></li>
+                       <li id="elem23"><a href="#">Moda niño</a></li>
+                   </ul>
+               </li>
+               <li id="elem3"><a href="#">Comentarios</a></li>
+               <li id="elem4"><a href="#">Staff</a>
+               <!--ul.submenu#lista14>(li#elem41>a{Quienes somos})+(li#elem42>a{Nuestro negocio})+(li#elem43>a{Breve historia})-->
+                   <ul class="submenu" id="lista14">
+                       <li id="elem41"><a href="#">Quienes somos</a></li>
+                       <li id="elem42"><a href="#">Nuestro negocio</a></li>
+                       <li id="elem43"><a href="#">Breve historia</a></li>
+                   </ul>
+               </li>
+               <li id="elem5"><a href="#">Contacto</a></li>
+           </ul>
+       </nav>   
+    </body>
+</html>
